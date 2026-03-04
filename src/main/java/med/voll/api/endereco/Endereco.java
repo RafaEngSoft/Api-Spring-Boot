@@ -1,5 +1,6 @@
 package med.voll.api.endereco;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ public class Endereco {
     private String bairro;
     private String cep;
     private String numero;
+    @Column(length = 2)
     private String uf;
     private String cidade;
     private String complemento;
