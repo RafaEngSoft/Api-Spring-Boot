@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class TratadorDeErros {
 
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity tratarErroDuplicidade(DataIntegrityViolationException ex) {
-        String mensagem = "Já existe um cadastro com os dados informados (possível email ou CRM duplicado).";
+    public ResponseEntity<ErroResponse> tratarErroDuplicidade(DataIntegrityViolationException ex) {
+        String mensagem = "Já existe um cadastro com os dados informados.";
         return ResponseEntity.status(409).body(new ErroResponse(mensagem));
     }
 
